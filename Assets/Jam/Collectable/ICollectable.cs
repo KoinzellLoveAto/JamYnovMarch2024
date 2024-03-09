@@ -4,8 +4,6 @@ using UnityEngine;
 
 public interface ICollectable
 {
-    public void Collect(Character characterCollector)
-    {
+    public void Collect(Character Collecter);
 
-    }
 }

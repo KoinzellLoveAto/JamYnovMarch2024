@@ -23,6 +23,10 @@ public class Turret : MonoBehaviour
         shootController.Shoot(turretHead.ShootingFrom, dirToShoot);
     }
 
+    public void AmmoSwitch(AAmmo newAmmo)
+    {
+        shootController.ChangeAmmo(newAmmo);
+    }
   
 }
 

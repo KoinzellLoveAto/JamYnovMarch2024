@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a2882dd520c99341a89cf9ae7a360b1, type: 3}
-  m_Name: DataCommunShoot
+  m_Name: DataShotGun
   m_EditorClassIdentifier: 
-  DelayBetweenShoot: 3
-  ProjectileForceRange: {x: 10, y: 45}
-  imprecisionMagnitude: 0.4
-  nbProjectileShoot: 80
+  DelayBetweenShoot: 0.7
+  ProjectileForceRange: {x: 15, y: 20}
+  imprecisionMagnitude: 0
+  nbProjectileShoot: 0

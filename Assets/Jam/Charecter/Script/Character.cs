@@ -95,4 +95,9 @@ public class Character : MonoBehaviour
         currentDirToMouse = dir;
     }
 
+    public void AskToChangeAmmo(AAmmo newAmmo)
+    {
+        turretEquiped.AmmoSwitch(newAmmo);
+    }
+
 }

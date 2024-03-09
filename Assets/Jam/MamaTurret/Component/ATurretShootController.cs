@@ -29,8 +29,9 @@ public abstract class ATurretShootController : MonoBehaviour
 
     public abstract void Shoot(Transform from, Vector3 dir);
 
-    public virtual void ChangeAmmo()
+    public virtual void ChangeAmmo(AAmmo newAmmo)
     {
+        currentAmmoPrefab = newAmmo;
         changeAmmoFeedBack.Play(transform.position);
     }
 
