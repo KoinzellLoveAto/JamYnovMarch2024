@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2882dd520c99341a89cf9ae7a360b1, type: 3}
   m_Name: DataCommunShoot
   m_EditorClassIdentifier: 
-  AttackSpeed: 0.7
+  DelayBetweenShoot: 0.5
   ProjectileForce: 15
+  imprecisionMagnitude: 0.5
+  nbProjectileShoot: 10

@@ -18,23 +18,15 @@ public class CharacterController : MonoBehaviour
 
     public void Start()
     {
-        mapActionPlayer.Character.Shoot.performed += HandleShootInput;
         mapActionPlayer.Character.Boost.canceled += HandleCancelBoost;
 
     }
 
     public void OnDestroy()
     {
-        mapActionPlayer.Character.Shoot.performed -= HandleShootInput;
         mapActionPlayer.Character.Boost.canceled -= HandleCancelBoost;
 
     }
-
-    public void HandleShootInput(InputAction.CallbackContext a_ctx)
-    {
-        linkedCharacter.TryShoot();
-    }
-
 
     public void HandleCancelBoost(InputAction.CallbackContext a_ctx)
     {
@@ -46,8 +38,6 @@ public class CharacterController : MonoBehaviour
     {
         if (linkedCharacter)
         {
-
-
             Vector2 directionInput = mapActionPlayer.Character.Move.ReadValue<Vector2>();
             linkedCharacter.TryMove(directionInput.y);
 
@@ -57,9 +47,12 @@ public class CharacterController : MonoBehaviour
             Vector2 lookInput = mapActionPlayer.Character.LookInput.ReadValue<Vector2>();
             linkedCharacter.SetCurrentDirMouse(lookInput);
 
-            if ( mapActionPlayer.Character.Boost.IsPressed())
+            if (mapActionPlayer.Character.Boost.IsPressed())
                 linkedCharacter.TryUseBoost();
-         
+
+            if (mapActionPlayer.Character.Shoot.IsPressed())
+                linkedCharacter.TryShoot();
+
         }
         else
             print("No character linked");
