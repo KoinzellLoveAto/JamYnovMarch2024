@@ -15,4 +15,4 @@ MonoBehaviour:
   DelayBetweenShoot: 3
   ProjectileForceRange: {x: 20, y: 45}
   imprecisionMagnitude: 0.5
-  nbProjectileShoot: 5
+  nbProjectileShoot: 10
