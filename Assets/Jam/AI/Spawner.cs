@@ -31,7 +31,8 @@ public class Spawner : MonoBehaviour
             Random.Range(minY, maxY),
             Random.Range(minZ, maxZ)
         );
-        return randomPoint;
+
+        return transform.position + randomPoint;
     }
 
 

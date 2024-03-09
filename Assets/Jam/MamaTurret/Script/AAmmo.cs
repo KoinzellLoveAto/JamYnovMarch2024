@@ -31,4 +31,6 @@ public abstract class AAmmo : MonoBehaviour
         Destroy(gameObject);
         
     }
+
+    
 }

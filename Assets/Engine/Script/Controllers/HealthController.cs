@@ -151,7 +151,7 @@ namespace RakaEngine.Controllers.Health
         {
             if (GodMod) return;
 
-            if (!CanBeDammaged) return;
+            if (CanBeDammaged) return;
 
             currentHealth -= a_amount;
 

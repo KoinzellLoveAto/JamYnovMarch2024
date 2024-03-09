@@ -23,7 +23,7 @@ namespace RakaExtension.ListExtension
 
         internal static T PickRandom<T>(this List<T> a_list)
         {
-            int rndIndex = Random.Range(0, a_list.Count-1);
+            int rndIndex = Random.Range(0, a_list.Count);
             return a_list[rndIndex];
         }
 

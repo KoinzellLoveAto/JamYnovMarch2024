@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4614200927435074349, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 4858343950549482766}
     - target: {fileID: 6058582385573013703, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_Name
       value: Enemie Kamikaz
@@ -76,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <navMeshAgent>k__BackingField: {fileID: 7954250221501418915}
   <healthController>k__BackingField: {fileID: 7380701194675375054}
+  <Target>k__BackingField: {fileID: 0}
 --- !u!114 &7380701194675375054 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1241155803751649820, guid: 43f9900a137a5944789a99e78778476c, type: 3}

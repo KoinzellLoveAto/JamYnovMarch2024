@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class SpawnManager : MonoBehaviour
 {
-    private List<AEnemy> currentEnemyInMap;
+    private List<AEnemy> currentEnemiesInMap = new();
 
     [field: SerializeField]
     private List<Spawner> Spawner;
@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     public void SpawnRndEnemy(Vector3 position)
     {
         AEnemy enemySpawned = Instantiate(EnemiesPrefab.PickRandom(), position, Quaternion.identity);
-        currentEnemyInMap.Add(enemySpawned);
+        currentEnemiesInMap.Add(enemySpawned);
         enemySpawned.OnDeathEnemy += HandlerDeathEnemy;
     }
 
@@ -40,10 +40,11 @@ public class SpawnManager : MonoBehaviour
     public void HandlerDeathEnemy(AEnemy enemy)
     {
         numEnemyLeft--;
-        currentEnemyInMap.Remove(enemy);
+        currentEnemiesInMap.Remove(enemy);
         enemy.OnDeathEnemy -= HandlerDeathEnemy;
+        Destroy(enemy.gameObject);
 
-        if (numEnemyLeft == 0)
+        if (numEnemyLeft <= 0)
             OnWaveClear?.Invoke();
 
     }
@@ -52,8 +53,15 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < EnemyToSpawn; i++)
         {
-            Spawner.PickRandom().GetRndPosition();
             SpawnRndEnemy(Spawner.PickRandom().GetRndPosition());
+        }
+    }
+
+    public void GiveTargetToAI(Character target)
+    {
+        foreach(var enemy in currentEnemiesInMap)
+        {
+            enemy.SetTarget(target.transform);
         }
     }
 }

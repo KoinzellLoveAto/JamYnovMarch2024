@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnState : AGameState
 {
     public SpawnManager spawnManager;
-
+    
     public override void OnEnter()
     {
         base.OnEnter();

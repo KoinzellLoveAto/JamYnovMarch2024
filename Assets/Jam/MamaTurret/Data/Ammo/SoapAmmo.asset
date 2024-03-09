@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db98a72acdee8b6478e9180f03e5fe33, type: 3}
   m_Name: SoapAmmo
   m_EditorClassIdentifier: 
-  Dammage: 0
+  Dammage: 100
   LifeTime: 5

@@ -25,6 +25,10 @@ public class AEnemy : MonoBehaviour
         healthController.EventSystem_onDeath += HandleDeathEnemy;
     }
 
+    public void SetTarget(Transform target)
+    {
+        Target = target;
+    }
     public void HandleDeathEnemy(HealthController healthController)
     {
         OnDeathEnemy?.Invoke(this);
