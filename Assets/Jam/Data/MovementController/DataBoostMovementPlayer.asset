@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51032c7b200f9c94cabc8544337e5d37, type: 3}
   m_Name: DataBoostMovementPlayer
   m_EditorClassIdentifier: 
-  ForceSpeedStrenght: 9000
-  MaxVelocity: 100
+  ForceSpeedStrenght: 1000
+  MaxVelocity: 30
   rotationSpeed: 10
