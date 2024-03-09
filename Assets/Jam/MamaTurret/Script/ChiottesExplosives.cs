@@ -23,9 +23,6 @@ public class ChiottesExplosives : AAmmo
     [Space(5)]
     public GameObject explosionVFX;
 
-
-
-
     private void Awake()
     {
         exploTimer = Random.Range(minTimer, maxTimer);
@@ -54,7 +51,7 @@ public class ChiottesExplosives : AAmmo
             //Damage Enemies;
         }
 
-        explosionVFX.transform.localScale *= exploForce;
+        explosionVFX.transform.localScale *= exploForce/2;
         explosionVFX.SetActive(true);
     }
 

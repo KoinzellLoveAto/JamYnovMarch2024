@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2882dd520c99341a89cf9ae7a360b1, type: 3}
   m_Name: DataTATATAATATATA
   m_EditorClassIdentifier: 
-  DelayBetweenShoot: 0.01
-  ProjectileForceRange: {x: 10, y: 15}
-  imprecisionMagnitude: 0.2
+  DelayBetweenShoot: 0.1
+  ProjectileForceRange: {x: 5, y: 10}
+  imprecisionMagnitude: 0.3
   nbProjectileShoot: 1

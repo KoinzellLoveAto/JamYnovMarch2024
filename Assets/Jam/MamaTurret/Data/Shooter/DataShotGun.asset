@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DelayBetweenShoot: 0.7
   ProjectileForceRange: {x: 20, y: 25}
-  imprecisionMagnitude: 0.5
-  nbProjectileShoot: 3
+  imprecisionMagnitude: 0.6
+  nbProjectileShoot: 2
