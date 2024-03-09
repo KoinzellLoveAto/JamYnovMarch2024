@@ -8,8 +8,10 @@ using RakaEngine.Controllers.Stamina;
 
 public class Character : MonoBehaviour
 {
-    [field:SerializeField]
-    public CinemachineVirtualCamera VCam { get; private set; }
+    [field: Header("Camera")]
+    [field: SerializeField]
+    public CameraPlayer camPlayer { get; private set; }
+
 
 
     [field:Header("Components")]
@@ -21,11 +23,23 @@ public class Character : MonoBehaviour
     [field: SerializeField]
     public BoostController boostController { get; private set; }
 
-
+    
     [field:Header("Turret")]
     [field: SerializeField]
     public Turret turretEquiped { get; private set; }
 
+
+    private Vector3 currentDirToMouse;
+
+    private void Awake()
+    {
+        healthController.Initialize();
+    }
+
+    private void Update()
+    {
+        TryRotateTurret(currentDirToMouse);
+    }
 
     public void TryMove(float direction)
     {
@@ -38,9 +52,15 @@ public class Character : MonoBehaviour
         movementController.Rotate(rotation);
     }
 
+    public void TryRotateTurret(Vector3 directionToLook)
+    {
+        turretEquiped.TryRotateHead(directionToLook);
+    }
+
+
     public void TryShoot()
     {
-        print("shoot");
+       turretEquiped.TryShoot(currentDirToMouse);
     }
 
 
@@ -57,6 +77,22 @@ public class Character : MonoBehaviour
     public void CancelBoost()
     {
         movementController.ApplyBaseMovement();
+    }
+
+
+    public void SetCurrentDirMouse(Vector2 lookInput)
+    {
+        Vector3 mouseWorldPosition = camPlayer.GetMouseWorldPosition(lookInput);
+
+        Vector3 posTargetY0 = mouseWorldPosition;
+        posTargetY0.y = transform.position.y;
+
+        Vector3 position = transform.position;
+        position.y = mouseWorldPosition.y;
+
+        Vector3 dir = (posTargetY0 - position).normalized;
+
+        currentDirToMouse = dir;
     }
 
 }

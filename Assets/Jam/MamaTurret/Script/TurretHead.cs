@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class TurretHead : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [field:SerializeField]
+    public Transform ShootingFrom { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

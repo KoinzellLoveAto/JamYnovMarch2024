@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670c370a9e5147545aff04e29c75f5a6, type: 3}
-  m_Name: DataPlayer
+  m_Script: {fileID: 11500000, guid: 1a2882dd520c99341a89cf9ae7a360b1, type: 3}
+  m_Name: DataCommunShoot
   m_EditorClassIdentifier: 
-  speed: 0
-  maxSpeed: 0
+  AttackSpeed: 0.7

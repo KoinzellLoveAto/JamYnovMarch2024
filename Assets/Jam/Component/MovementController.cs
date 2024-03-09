@@ -27,7 +27,7 @@ public class MovementController : MonoBehaviour
 
     public void Move(float direction)
     {
-        _rb.AddForce(OwnerCharact.transform.forward * direction * _currentDataUse.ForceSpeedStrenght);
+        _rb.AddForce(OwnerCharact.transform.forward * direction * _currentDataUse.ForceSpeedStrenght * Time.deltaTime);
         ClampMaxVelocity();
 
     }
@@ -35,7 +35,7 @@ public class MovementController : MonoBehaviour
 
     public void Rotate(float rotationDirection)
     {
-        OwnerCharact.transform.Rotate(Vector3.up * rotationDirection * _currentDataUse.rotationSpeed);
+        OwnerCharact.transform.Rotate(Vector3.up * rotationDirection * _currentDataUse.rotationSpeed * Time.deltaTime);
     }
     
 

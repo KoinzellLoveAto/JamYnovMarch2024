@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51032c7b200f9c94cabc8544337e5d37, type: 3}
   m_Name: DataBasicMovementPlayer
   m_EditorClassIdentifier: 
-  ForceSpeedStrenght: 2
+  ForceSpeedStrenght: 3000
   MaxVelocity: 10
-  rotationSpeed: 0.8
-  maxRotationSpeed: 30
+  rotationSpeed: 80

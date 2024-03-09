@@ -7,9 +7,20 @@ public class Turret : MonoBehaviour
     [field: SerializeField]
     public TurretHead turretHead { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
+    [field: SerializeField]
+    public ATurretShootController shootController { get; private set; }
 
+
+    public void TryRotateHead(Vector3 dirVector)
+    {
+        Quaternion targetRotation = Quaternion.LookRotation(dirVector);
+
+        transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+    }
+
+    public void TryShoot(Vector3 dirToShoot)
+    {
+        Instantiate(prefab, turretHead.ShootingFrom);
     }
 }
+

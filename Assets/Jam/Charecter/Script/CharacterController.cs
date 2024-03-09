@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
 
     public Character linkedCharacter;
 
+
     private void Awake()
     {
         mapActionPlayer = new MapAction();
@@ -45,16 +46,20 @@ public class CharacterController : MonoBehaviour
     {
         if (linkedCharacter)
         {
+
+
             Vector2 directionInput = mapActionPlayer.Character.Move.ReadValue<Vector2>();
             linkedCharacter.TryMove(directionInput.y);
 
-            Vector2 lookInput = mapActionPlayer.Character.Rotate.ReadValue<Vector2>();
-            linkedCharacter.TryRotate(lookInput.x);
+            Vector2 rotateInput = mapActionPlayer.Character.Rotate.ReadValue<Vector2>();
+            linkedCharacter.TryRotate(rotateInput.x);
 
-           if( mapActionPlayer.Character.Boost.IsPressed())
+            Vector2 lookInput = mapActionPlayer.Character.LookInput.ReadValue<Vector2>();
+            linkedCharacter.SetCurrentDirMouse(lookInput);
+
+            if ( mapActionPlayer.Character.Boost.IsPressed())
                 linkedCharacter.TryUseBoost();
-
-
+         
         }
         else
             print("No character linked");

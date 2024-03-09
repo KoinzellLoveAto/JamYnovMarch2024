@@ -88,7 +88,7 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e408b0af-ad75-43df-8d57-26880ffdf05c"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
