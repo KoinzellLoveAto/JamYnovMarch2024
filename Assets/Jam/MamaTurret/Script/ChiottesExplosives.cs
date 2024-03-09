@@ -51,7 +51,8 @@ public class ChiottesExplosives : AAmmo
             //Damage Enemies;
         }
 
-        GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(0).GetChild(1).GetComponent<MeshRenderer>().enabled = false;
         explosionVFX.transform.localScale *= exploForce/2;
         explosionVFX.SetActive(true);
     }
