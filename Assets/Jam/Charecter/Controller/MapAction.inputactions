@@ -87,17 +87,6 @@
                 },
                 {
                     "name": "up",
-                    "id": "ef823bdb-c123-47c5-b711-fe136e37c88f",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "up",
                     "id": "5665572d-105b-4aa0-b165-ed95d68ff0fc",
                     "path": "<Keyboard>/z",
                     "interactions": "",
@@ -165,7 +154,7 @@
                 {
                     "name": "",
                     "id": "866af30f-8790-44e3-a737-58c98bf81b76",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
