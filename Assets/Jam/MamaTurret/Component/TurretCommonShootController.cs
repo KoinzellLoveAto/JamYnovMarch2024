@@ -10,7 +10,9 @@ public class TurretCommonShootController : ATurretShootController
         {
 
             OnShoot?.Invoke();
+
             ShootFeeback.Play(transform.position);
+
             _canShoot = false;
 
             for (int i = 0; i < dataShootController.nbProjectileShoot; i++)

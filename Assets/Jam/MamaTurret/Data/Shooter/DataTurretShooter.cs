@@ -8,8 +8,9 @@ public class DataTurretShooter : ScriptableObject
 {
     public float DelayBetweenShoot = .7f;
 
-    public float ProjectileForce = 15;
+    public Vector2 ProjectileForceRange = new Vector2(15,20);
 
+    public float ProjectileForce => Random.Range(ProjectileForceRange.x,ProjectileForceRange.y);
 
     public float imprecisionMagnitude =0;
     public int nbProjectileShoot;
