@@ -27,6 +27,11 @@ public class Turret : MonoBehaviour
     {
         shootController.ChangeAmmo(newAmmo);
     }
+
+    public void ChangeTurretSetting(DataTurretShooter newTurretSetting)
+    {
+      shootController.ChangeTurretSetting(newTurretSetting);
+    }
   
 }
 

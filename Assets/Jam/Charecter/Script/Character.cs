@@ -100,4 +100,8 @@ public class Character : MonoBehaviour
         turretEquiped.AmmoSwitch(newAmmo);
     }
 
+    public void AskToChangeSettingsTurret(DataTurretShooter newSettingsController)
+    {
+        turretEquiped.ChangeTurretSetting(newSettingsController);
+    }
 }

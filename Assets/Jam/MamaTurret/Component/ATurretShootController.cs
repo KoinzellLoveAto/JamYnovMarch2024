@@ -35,6 +35,18 @@ public abstract class ATurretShootController : MonoBehaviour
         changeAmmoFeedBack.Play(transform.position);
     }
 
+    public virtual void ChangeTurretSetting(DataTurretShooter turretSetting)
+    {
+
+        dataShootController = turretSetting;
+        StopCoroutine(_shootRoutine);
+
+        _canShoot = true;
+        _shootRoutine = StartCoroutine(ShootRoutine());
+
+    }
+
+
     protected IEnumerator ShootRoutine()
     {
         yield return new WaitForSeconds(dataShootController.DelayBetweenShoot);
