@@ -15,7 +15,20 @@ public class AEnemy : MonoBehaviour
     [field: SerializeField]
     public HealthController healthController { get; private set; }
 
-    public void InitStat()
+    [field: SerializeField]
+    public Transform Target { get; private set; }
+
+    public Action<AEnemy> OnDeathEnemy;
+
+    public void Awake()
     {
+        healthController.EventSystem_onDeath += HandleDeathEnemy;
     }
+
+    public void HandleDeathEnemy(HealthController healthController)
+    {
+        OnDeathEnemy?.Invoke(this);
+    }
+
+
 }

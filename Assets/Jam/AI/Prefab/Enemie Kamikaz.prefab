@@ -75,6 +75,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <navMeshAgent>k__BackingField: {fileID: 7954250221501418915}
+  <healthController>k__BackingField: {fileID: 7380701194675375054}
+--- !u!114 &7380701194675375054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1241155803751649820, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+  m_PrefabInstance: {fileID: 8598774671600867794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a17bee9ffdfa604a89e16106264c16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &7954250221501418915 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 1817150152902661233, guid: 43f9900a137a5944789a99e78778476c, type: 3}

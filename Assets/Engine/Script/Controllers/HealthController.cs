@@ -36,9 +36,16 @@ namespace RakaEngine.Controllers.Health
         public bool GodMod { get; private set; } = false;
 
         public float MinHealthPoint { get; private set; } = 0;
+
+        [field:SerializeField]
         public float MaxHealthPoint { get; private set; } = 100;
         public float currentHealth { get; private set; }
 
+
+        public void Awake()
+        {
+            currentHealth = MaxHealthPoint;
+        }
 
         protected LockerController m_locker_canBeHealed = new LockerController();
         protected LockerController m_locker_canBeDammaged = new LockerController();

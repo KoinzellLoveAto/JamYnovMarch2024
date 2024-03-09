@@ -1,27 +1,38 @@
-using RakaExtension.ListExtension;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Spawner : MonoBehaviour
 {
-    private List<AEnemy> currentEnemyInMap;
+    public BoxCollider boxCollider;
 
-    [field: SerializeField]
-    private List<AEnemy> EnemiesPrefab;
-
-    private int EnemyToSpawn = 10;
-
-    public void SpawnRndEnemy(Transform transformToSpawn)
+    public Vector3 GetRndPosition()
     {
-        Instantiate(EnemiesPrefab.PickRandom(), transformToSpawn);
+        if (boxCollider == null)
+        {
+            Debug.LogError("BoxCollider reference is missing!");
+        }
+
+        // Obtenir les dimensions du BoxCollider
+        Vector3 size = boxCollider.size;
+        Vector3 center = boxCollider.center;
+
+        // Calculer les valeurs minimales et maximales pour chaque axe
+        float minX = center.x - size.x / 2f;
+        float maxX = center.x + size.x / 2f;
+        float minY = center.y - size.y / 2f;
+        float maxY = center.y + size.y / 2f;
+        float minZ = center.z - size.z / 2f;
+        float maxZ = center.z + size.z / 2f;
+
+        // Obtenir un point aléatoire dans la boîte
+        Vector3 randomPoint = new Vector3(
+            Random.Range(minX, maxX),
+            Random.Range(minY, maxY),
+            Random.Range(minZ, maxZ)
+        );
+        return randomPoint;
     }
 
 
-    public void SpawnEnemy(AEnemy enemy, Transform transformToSpawn)
-    {
-        Instantiate(enemy, transformToSpawn);
-
-    }
 }
