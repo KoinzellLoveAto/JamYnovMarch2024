@@ -110,7 +110,7 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""ef823bdb-c123-47c5-b711-fe136e37c88f"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -121,7 +121,7 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""9f8efa5a-b9b2-417b-9df8-ca1773a52d43"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -165,7 +165,7 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""866af30f-8790-44e3-a737-58c98bf81b76"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
