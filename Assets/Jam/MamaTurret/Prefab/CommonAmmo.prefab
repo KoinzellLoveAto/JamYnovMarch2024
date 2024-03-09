@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2863a8dcc1b5ee640bc51250fc6cc45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 1035380690338114978}
+  <dataAmmo>k__BackingField: {fileID: 11400000, guid: a4de2704394cf184cb462b0356316c2d, type: 2}
 --- !u!54 &1035380690338114978
 Rigidbody:
   m_ObjectHideFlags: 0

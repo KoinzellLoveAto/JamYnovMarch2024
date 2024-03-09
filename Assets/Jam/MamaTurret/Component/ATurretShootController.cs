@@ -1,4 +1,5 @@
 using MoreMountains.Feedbacks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
@@ -21,6 +22,7 @@ public abstract class ATurretShootController : MonoBehaviour
     [field: SerializeField]
     public MMFeedback ShootFeeback { get; protected set; }
 
+    public Action OnShoot;
 
     public abstract void Shoot(Transform from, Vector3 dir);
 

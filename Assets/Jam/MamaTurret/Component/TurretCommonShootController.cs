@@ -6,8 +6,9 @@ public class TurretCommonShootController : ATurretShootController
 {
     public override void Shoot(Transform from, Vector3 dir)
     {
-        AAmmo ammo =  Instantiate(currentAmmoPrefab, from);
+        OnShoot?.Invoke();
 
-
+        AAmmo ammo =  Instantiate(currentAmmoPrefab, from.position, from.rotation);
+        ammo.Shoot(dir, dataShootController.ProjectileForce);
     }
 }

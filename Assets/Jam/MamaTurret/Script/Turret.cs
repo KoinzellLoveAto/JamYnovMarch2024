@@ -20,6 +20,7 @@ public class Turret : MonoBehaviour
 
     public void TryShoot(Vector3 dirToShoot)
     {
+        shootController.Shoot(turretHead.ShootingFrom, dirToShoot);
     }
 }
 

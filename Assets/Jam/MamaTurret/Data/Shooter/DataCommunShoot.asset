@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DataCommunShoot
   m_EditorClassIdentifier: 
   AttackSpeed: 0.7
+  ProjectileForce: 15
