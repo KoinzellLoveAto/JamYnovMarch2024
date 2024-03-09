@@ -82,6 +82,11 @@ namespace RakaEngine.Controllers.Health
 
         #region Methods
 
+        public void InitStat(float maxHealth)
+        {
+            currentHealth = maxHealth;
+            this.MaxHealthPoint = maxHealth;
+        }
 
         public virtual void Initialize()
         {
