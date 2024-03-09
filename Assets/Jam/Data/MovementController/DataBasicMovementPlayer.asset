@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DataBasicMovementPlayer
   m_EditorClassIdentifier: 
   ForceSpeedStrenght: 3000
-  MaxVelocity: 10
+  MaxVelocity: 8
   rotationSpeed: 100
