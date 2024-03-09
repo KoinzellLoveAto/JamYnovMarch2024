@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class AIPerception : MonoBehaviour
 {
-    public EnemyTrigger owner;
+    public AEnemy owner;
 
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Character>())
+        {
+            owner.OnPlayerInRange();
+        }
+    }
 }

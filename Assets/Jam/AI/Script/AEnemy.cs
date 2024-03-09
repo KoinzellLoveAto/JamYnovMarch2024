@@ -4,12 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using RakaEngine.Statemachine;
 
-public class AEnemy : MonoBehaviour
+public abstract class AEnemy : MonoBehaviour
 {
     [field: SerializeField]
     public NavMeshAgent navMeshAgent { get; private set; }
 
+    protected MonoStateMachine statemachine;
 
 
     [field: SerializeField]
@@ -33,6 +35,14 @@ public class AEnemy : MonoBehaviour
     {
         OnDeathEnemy?.Invoke(this);
     }
+
+    public abstract void Init();
+
+    public virtual void OnPlayerInRange()
+    {
+
+    }
+
 
 
 }

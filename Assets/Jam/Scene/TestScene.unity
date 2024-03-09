@@ -3723,8 +3723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764556763}
-  m_LocalRotation: {x: 0.5257311, y: 0.0000000062903576, z: -0.0000000038876546, w: 0.85065085}
-  m_LocalPosition: {x: 9.661949, y: 15.006, z: 3.2210002}
+  m_LocalRotation: {x: 0.5257311, y: 0, z: 0, w: 0.85065085}
+  m_LocalPosition: {x: 8.981103, y: 18.515917, z: 0.60193396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3979,6 +3979,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7334205803938233494, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
   m_PrefabInstance: {fileID: 1573683254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1825283055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3253062642383258552, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
+  m_PrefabInstance: {fileID: 1573683254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecdf977fcd11a74785a4da4e1d8ee5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852984619
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,6 +4938,18 @@ PrefabInstance:
     - target: {fileID: 4842667767102040602, guid: 79c31324834361d439fb6b176728c025, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1825283055}
+    - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 40989028432876798}
+    - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
+      propertyPath: m_stateComponents.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7644063167983040181, guid: 79c31324834361d439fb6b176728c025, type: 3}
       propertyPath: spawnManager
