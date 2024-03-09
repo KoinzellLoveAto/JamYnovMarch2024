@@ -6,7 +6,7 @@ public class ChiottesExplosives : AAmmo
 {
     [Header("Timer Settings")]
     [Space(5)]
-    float exploTimer;
+    public float exploTimer;
     public float minTimer;
     public float maxTimer;
 
@@ -21,7 +21,7 @@ public class ChiottesExplosives : AAmmo
     public float exploDuration;
     public float exploRadius;
     [Space(5)]
-    GameObject explosionVFX;
+    public GameObject explosionVFX;
 
 
 
@@ -37,15 +37,17 @@ public class ChiottesExplosives : AAmmo
         transform.parent = collision.transform;
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
+        StartCoroutine(TimerExplosion());
     }
 
     public IEnumerator TimerExplosion()
     {
+        print("coroutine");
         yield return new WaitForSecondsRealtime(exploTimer);
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().AddExplosionForce(exploForce, transform.position, exploRadius);
-
+        print("Kaboom!");
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, exploRadius);
         foreach (var hitCollider in hitColliders)
         {
