@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DataShotGun
   m_EditorClassIdentifier: 
   DelayBetweenShoot: 0.7
-  ProjectileForceRange: {x: 15, y: 20}
-  imprecisionMagnitude: 0
-  nbProjectileShoot: 0
+  ProjectileForceRange: {x: 20, y: 25}
+  imprecisionMagnitude: 0.5
+  nbProjectileShoot: 3
