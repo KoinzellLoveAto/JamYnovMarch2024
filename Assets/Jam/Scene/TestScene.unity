@@ -3378,8 +3378,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764556763}
-  m_LocalRotation: {x: 0.5257311, y: 0.0000000062903576, z: -0.0000000038876546, w: 0.85065085}
-  m_LocalPosition: {x: 9.661949, y: 14.820958, z: 3.2210002}
+  m_LocalRotation: {x: 0.5257311, y: 0, z: 0, w: 0.85065085}
+  m_LocalPosition: {x: 8.981103, y: 18.515917, z: 0.60193396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4086,6 +4086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322474615181478541, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6058582385573013703, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_Name
       value: Enemie
@@ -4100,11 +4104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920995472706268153, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.519705
+      value: 5.275
       objectReference: {fileID: 0}
     - target: {fileID: 7920995472706268153, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.178515
+      value: 14.88
       objectReference: {fileID: 0}
     - target: {fileID: 7920995472706268153, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_LocalRotation.w
