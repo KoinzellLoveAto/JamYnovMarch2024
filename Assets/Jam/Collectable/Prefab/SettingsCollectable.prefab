@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1433471828955091271}
   - component: {fileID: 1433471828955091270}
   - component: {fileID: 1433471828955091269}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SettingsCollectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433471829535346422}
   - component: {fileID: 1433471829535346421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,18 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
       propertyPath: m_Name
       value: CFX_ElectricityBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
       propertyPath: m_RootOrder
@@ -293,6 +305,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4bdf30f643cd59458a6734c78e3448b, type: 3}
       propertyPath: m_Name
       value: Cles_anglais
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4bdf30f643cd59458a6734c78e3448b, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bdf30f643cd59458a6734c78e3448b, type: 3}

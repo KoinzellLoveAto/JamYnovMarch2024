@@ -13,8 +13,8 @@ TagManager:
   - UI
   - EnemyProjectiles
   - Player
-  - Enemy
-  - 
+  - AmmoPickup
+  - GearPickup
   - 
   - 
   - 
