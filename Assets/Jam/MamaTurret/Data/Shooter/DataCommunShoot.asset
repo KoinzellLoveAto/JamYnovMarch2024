@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DataCommunShoot
   m_EditorClassIdentifier: 
   DelayBetweenShoot: 3
-  ProjectileForceRange: {x: 10, y: 45}
-  imprecisionMagnitude: 0.4
-  nbProjectileShoot: 80
+  ProjectileForceRange: {x: 20, y: 45}
+  imprecisionMagnitude: 0.5
+  nbProjectileShoot: 5
