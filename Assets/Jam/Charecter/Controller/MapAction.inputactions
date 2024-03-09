@@ -97,6 +97,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "up",
+                    "id": "5665572d-105b-4aa0-b165-ed95d68ff0fc",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "a652e5a9-8ccd-4f84-9710-2ce2a7e8c4a8",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "down",
                     "id": "9f8efa5a-b9b2-417b-9df8-ca1773a52d43",
                     "path": "<Keyboard>/ctrl",
