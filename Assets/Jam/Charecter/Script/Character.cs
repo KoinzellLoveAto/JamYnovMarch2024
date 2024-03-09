@@ -82,17 +82,22 @@ public class Character : MonoBehaviour
 
     public void SetCurrentDirMouse(Vector2 lookInput)
     {
+        /*
         Vector3 mouseWorldPosition = camPlayer.GetMouseWorldPosition(lookInput);
 
         Vector3 posTargetY0 = mouseWorldPosition;
         posTargetY0.y = transform.position.y;
 
-        Vector3 position = transform.position;
+        
         position.y = mouseWorldPosition.y;
+*/
+        Vector3 position = transform.position;
 
-        Vector3 dir = (posTargetY0 - position).normalized;
+        Vector3 joystickDir = new Vector3(lookInput.x, 0, lookInput.y).normalized;
 
-        currentDirToMouse = dir;
+        Vector3 dir = (joystickDir * 20 - position).normalized;
+
+        currentDirToMouse = joystickDir;
     }
 
     public void AskToChangeAmmo(AAmmo newAmmo)
@@ -103,5 +108,12 @@ public class Character : MonoBehaviour
     public void AskToChangeSettingsTurret(DataTurretShooter newSettingsController)
     {
         turretEquiped.ChangeTurretSetting(newSettingsController);
+    }
+
+    public void SetForwardDir()
+    {
+        currentDirToMouse = transform.forward;
+        currentDirToMouse.y = 0;
+        currentDirToMouse = currentDirToMouse.normalized * 20;
     }
 }

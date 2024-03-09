@@ -45,13 +45,22 @@ public class CharacterController : MonoBehaviour
             linkedCharacter.TryRotate(rotateInput.x);
 
             Vector2 lookInput = mapActionPlayer.Character.LookInput.ReadValue<Vector2>();
-            linkedCharacter.SetCurrentDirMouse(lookInput);
+            //linkedCharacter.SetCurrentDirMouse(lookInput);
 
             if (mapActionPlayer.Character.Boost.IsPressed())
                 linkedCharacter.TryUseBoost();
 
             if (mapActionPlayer.Character.Shoot.IsPressed())
                 linkedCharacter.TryShoot();
+
+            if(Mathf.Approximately(mapActionPlayer.Character.LookInput.ReadValue<Vector2>().magnitude,0))
+            {
+                linkedCharacter.SetForwardDir();
+            }
+            else
+            {
+                linkedCharacter.SetCurrentDirMouse(lookInput);
+            }
 
         }
         else
