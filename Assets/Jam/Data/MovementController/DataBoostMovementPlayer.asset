@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DataBoostMovementPlayer
   m_EditorClassIdentifier: 
   ForceSpeedStrenght: 750
-  MaxVelocity: 20
+  MaxVelocity: 15
   rotationSpeed: 50
