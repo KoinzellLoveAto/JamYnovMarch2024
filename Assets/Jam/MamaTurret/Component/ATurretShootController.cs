@@ -1,6 +1,7 @@
 using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public abstract class ATurretShootController : MonoBehaviour
@@ -21,11 +22,13 @@ public abstract class ATurretShootController : MonoBehaviour
     public MMFeedback ShootFeeback { get; protected set; }
 
 
-    public abstract void Shoot();
+    public abstract void Shoot(Transform from, Vector3 dir);
 
     public virtual void ChangeAmmo()
     {
         changeAmmoFeedBack.Play(transform.position);
     }
+
+
 
 }

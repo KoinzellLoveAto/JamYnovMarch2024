@@ -20,7 +20,6 @@ public class Turret : MonoBehaviour
 
     public void TryShoot(Vector3 dirToShoot)
     {
-        Instantiate(prefab, turretHead.ShootingFrom);
     }
 }
 

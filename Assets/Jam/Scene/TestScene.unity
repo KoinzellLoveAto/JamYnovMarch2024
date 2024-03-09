@@ -2107,6 +2107,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6812107958992127845, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
+      propertyPath: <changeAmmoFeedBack>k__BackingField
+      value: 
+      objectReference: {fileID: 1788593988}
     - target: {fileID: 7334205803938233494, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2400,8 +2404,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764556763}
-  m_LocalRotation: {x: 0.5257311, y: 0.0000000062903576, z: -0.0000000038876546, w: 0.85065085}
-  m_LocalPosition: {x: 9.661949, y: 14.820958, z: 3.2210002}
+  m_LocalRotation: {x: 0.5257311, y: 0, z: 0, w: 0.85065085}
+  m_LocalPosition: {x: 8.981103, y: 18.515917, z: 0.60193396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2442,6 +2446,67 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1788593987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5616257091350252807, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
+  m_PrefabInstance: {fileID: 1573683254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1788593988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1517039722698698401, guid: 2d6ccc14124fafd488867aa18c96cfe2, type: 3}
+  m_PrefabInstance: {fileID: 1573683254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788593987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e66b87bc2da2a4dba77662c88de2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1788593991
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788593987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fe7e41857f44348b52714b3238715c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Camera Shake
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 0
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  RepeatUntilStopped: 0
+  Channel: 0
+  CameraShakeProperties:
+    Duration: 0.1
+    Amplitude: 0.2
+    Frequency: 40
+    AmplitudeX: 0
+    AmplitudeY: 0
+    AmplitudeZ: 0
 --- !u!1 &1806549220
 GameObject:
   m_ObjectHideFlags: 0
