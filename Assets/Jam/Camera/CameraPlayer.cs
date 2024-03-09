@@ -6,11 +6,17 @@ using UnityEngine.InputSystem;
 
 public class CameraPlayer : MonoBehaviour
 {
-    [field:SerializeField]
-    public CinemachineVirtualCamera VCam  { get; private set; }
+    [field: SerializeField]
+    public CinemachineVirtualCamera VCam { get; private set; }
 
     public GameObject prefab;
 
+    int layerMask;
+
+    public void Awake()
+    {
+        layerMask = 1 << LayerMask.NameToLayer("Enemy");
+    }
     public Vector3 GetMouseWorldPosition(Vector2 mousePosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
@@ -19,8 +25,8 @@ public class CameraPlayer : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            intersectionPoint = hit.point;
 
+                intersectionPoint = hit.point;
         }
         else
         {

@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 115111329932353964, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322474615181478529, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310569817571345816, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016815889792688266, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4614200927435074349, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: owner
       value: 
@@ -14,6 +30,14 @@ PrefabInstance:
     - target: {fileID: 6058582385573013703, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_Name
       value: Enemie Kamikaz
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058582385573013703, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148636641514176049, guid: 43f9900a137a5944789a99e78778476c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7920995472706268153, guid: 43f9900a137a5944789a99e78778476c, type: 3}
       propertyPath: m_RootOrder

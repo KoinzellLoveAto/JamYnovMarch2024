@@ -5,5 +5,6 @@ using UnityEngine;
 public class AIPerception : MonoBehaviour
 {
     public EnemyTrigger owner;
+
   
 }
