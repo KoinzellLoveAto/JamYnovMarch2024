@@ -5,15 +5,7 @@ using UnityEngine;
 
 public class StateIdle : AMonoState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public EnemyKamikaz owner;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

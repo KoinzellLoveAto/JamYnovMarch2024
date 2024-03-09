@@ -3723,8 +3723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764556763}
-  m_LocalRotation: {x: 0.5257311, y: 0, z: 0, w: 0.85065085}
-  m_LocalPosition: {x: 8.981103, y: 18.515917, z: 0.60193396}
+  m_LocalRotation: {x: 0.5257311, y: 0.0000000062903576, z: -0.0000000038876546, w: 0.85065085}
+  m_LocalPosition: {x: 9.661949, y: 15.006, z: 3.2210002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4633,6 +4633,10 @@ PrefabInstance:
       value: SpawnerManager
       objectReference: {fileID: 0}
     - target: {fileID: 5929543069683145367, guid: a4496f69e9c3b624ca1b2a35375e4a68, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1825283055}
+    - target: {fileID: 5929543069683145367, guid: a4496f69e9c3b624ca1b2a35375e4a68, type: 3}
       propertyPath: Spawner.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -4949,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 40989028432876798}
     - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
       propertyPath: m_stateComponents.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7644063167983040181, guid: 79c31324834361d439fb6b176728c025, type: 3}
       propertyPath: spawnManager

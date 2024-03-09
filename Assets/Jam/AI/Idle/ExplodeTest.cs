@@ -1,19 +1,26 @@
+using RakaEngine.Controllers.Health;
 using RakaEngine.Statemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ExplodeTest : AMonoState
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemyKamikaz owner;
+
+    public override void OnEnter()
     {
-        
+        base.OnEnter();
+        owner.navMeshAgent.isStopped = true;
+        owner.rb.isKinematic = false;
+        Vector3 directionToPlayer = (owner.Target.position - transform.position).normalized;
+        owner.rb.velocity = directionToPlayer * owner.RushSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerTouch(Character character)
     {
-        
+        character.healthController.Dammage(owner.dammage);
     }
 }

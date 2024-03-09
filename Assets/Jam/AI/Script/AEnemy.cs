@@ -11,6 +11,7 @@ public abstract class AEnemy : MonoBehaviour
     [field: SerializeField]
     public NavMeshAgent navMeshAgent { get; private set; }
 
+    [field:SerializeField]
     protected MonoStateMachine statemachine;
 
 
@@ -20,10 +21,13 @@ public abstract class AEnemy : MonoBehaviour
     [field: SerializeField]
     public Transform Target { get; private set; }
 
+    public Rigidbody rb { get; private set; }
+
     public Action<AEnemy> OnDeathEnemy;
 
     public void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         healthController.EventSystem_onDeath += HandleDeathEnemy;
     }
 
@@ -36,7 +40,7 @@ public abstract class AEnemy : MonoBehaviour
         OnDeathEnemy?.Invoke(this);
     }
 
-    public abstract void Init();
+    public abstract void Init(Transform target);
 
     public virtual void OnPlayerInRange()
     {

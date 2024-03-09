@@ -15,6 +15,10 @@ public class SpawnManager : MonoBehaviour
     [field: SerializeField]
     private List<AEnemy> EnemiesPrefab;
 
+    [field: SerializeField]
+    private Character character;
+
+    
 
 
     private int EnemyToSpawn = 10;
@@ -27,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     {
         AEnemy enemySpawned = Instantiate(EnemiesPrefab.PickRandom(), position, Quaternion.identity);
         currentEnemiesInMap.Add(enemySpawned);
+        enemySpawned.Init(character.transform);
         enemySpawned.OnDeathEnemy += HandlerDeathEnemy;
     }
 

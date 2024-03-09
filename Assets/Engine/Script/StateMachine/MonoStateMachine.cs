@@ -75,6 +75,7 @@ namespace RakaEngine.Statemachine
             // Leave old state
             currentState?.OnLeave();
 
+
             //unregister Callback to oldState
             currentState.SystemEvent_OnChangeState -= ChangeCurrentState;
 
