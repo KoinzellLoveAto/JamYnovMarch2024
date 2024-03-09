@@ -652,6 +652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MamieKalash
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 61e1c8817d4b0de4e8cc274551e7c032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e1c8817d4b0de4e8cc274551e7c032, type: 3}
 --- !u!4 &6025342206033136677 stripped
