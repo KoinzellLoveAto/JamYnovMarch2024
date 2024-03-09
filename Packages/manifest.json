@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+    "com.deltation.toon-shader": "https://github.com/Delt06/urp-toon-shader.git?path=Packages/com.deltation.toon-shader",
     "com.unity.2d.animation": "7.1.0",
     "com.unity.cinemachine": "2.10.0",
     "com.unity.collab-proxy": "1.17.7",
