@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class SpawnManager : MonoBehaviour
 
     public Action OnWaveSpawn;
 
+    public ScoreSC scoreSC;
+
     public UnityEvent OnWaveClear;
     public void SpawnRndEnemy(Vector3 position)
     {
@@ -46,6 +49,7 @@ public class SpawnManager : MonoBehaviour
 
     public void HandlerDeathEnemy(AEnemy enemy)
     {
+        scoreSC.dmgCount += 100;
         currentEnemiesInMap.Remove(enemy);
         enemy.OnDeathEnemy -= HandlerDeathEnemy;
         Destroy(enemy.gameObject);
@@ -85,5 +89,10 @@ public class SpawnManager : MonoBehaviour
     {
         EnemyToSpawn = EnemyToSpawn + currentWave * 5;
         SpawnEntiereWave();
+    }
+
+    private void Update()
+    {
+        scoreSC = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreSC>();
     }
 }

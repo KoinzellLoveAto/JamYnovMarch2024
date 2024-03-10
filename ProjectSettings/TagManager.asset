@@ -7,6 +7,7 @@ TagManager:
   - Soap
   - Chiot
   - Clak
+  - Score
   layers:
   - Default
   - TransparentFX

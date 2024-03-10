@@ -79,4 +79,26 @@ public class AmmoImageManager : MonoBehaviour
             soap.SetActive(false);
         }
     }
+
+
+    public IEnumerator PlaySound()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        if (isClak)
+        {
+            clakSFX.Play();
+        }
+
+        if (isChiot)
+        {
+           chiotSFX.Play();
+        }
+
+
+
+        if (isSoap)
+        {
+            soapSFX.Play();
+        }
+    }
 }

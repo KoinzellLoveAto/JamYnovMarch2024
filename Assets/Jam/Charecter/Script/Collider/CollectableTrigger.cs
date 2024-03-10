@@ -6,6 +6,12 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
 {
     [field: SerializeField]
     public Character ownerCharacter;
+    public AmmoImageManager imageManager;
+
+    private void Start()
+    {
+      
+    }
 
     public void OnTakeCollectable()
     {
@@ -13,7 +19,8 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
     }
     public void Damage(float amount)
     {
-       ownerCharacter.healthController.Dammage(amount);
+        ownerCharacter.healthController.Dammage(amount);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +30,7 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
         {
             collectable.Collect(ownerCharacter);
             OnTakeCollectable();
+            StartCoroutine(imageManager.PlaySound());
         }
     }
 }

@@ -38,6 +38,7 @@ public abstract class AEnemy : MonoBehaviour
     public void HandleDeathEnemy(HealthController healthController)
     {
         OnDeathEnemy?.Invoke(this);
+       
     }
 
     public abstract void Init(Transform target);
