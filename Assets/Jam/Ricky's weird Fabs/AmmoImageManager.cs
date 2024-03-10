@@ -81,8 +81,9 @@ public class AmmoImageManager : MonoBehaviour
     }
 
 
-    public void PlaySound()
+    public IEnumerator PlaySound()
     {
+        yield return new WaitForSecondsRealtime(0.2f);
         if (isClak)
         {
             clakSFX.Play();
