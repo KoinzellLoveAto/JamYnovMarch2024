@@ -84,6 +84,7 @@ public class SpawnManager : MonoBehaviour
     public void SpawnNextWave()
     {
         EnemyToSpawn = EnemyToSpawn + currentWave * 5;
+        numEnemyLeft = EnemyToSpawn;
         SpawnEntiereWave();
     }
 }
