@@ -7,7 +7,12 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
     [field: SerializeField]
     public Character ownerCharacter;
     public AmmoImageManager imageManager;
-    public ScoreSC scoreSC;
+
+    private void Start()
+    {
+      
+    }
+
     public void OnTakeCollectable()
     {
 
@@ -15,7 +20,6 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
     public void Damage(float amount)
     {
         ownerCharacter.healthController.Dammage(amount);
-        scoreSC.dmgCount += (int)amount;
 
     }
 
@@ -26,7 +30,7 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
         {
             collectable.Collect(ownerCharacter);
             OnTakeCollectable();
-            imageManager.PlaySound();
+            StartCoroutine(imageManager.PlaySound());
         }
     }
 }
