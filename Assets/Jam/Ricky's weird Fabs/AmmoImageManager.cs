@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AmmoImageManager : MonoBehaviour
+{
+    public ATurretShootController turretShootController;
+    public bool isClak;
+    public bool isChiot;
+    public bool isSoap;
+
+    public GameObject clak;
+    public GameObject chiot;
+    public GameObject soap;
+
+
+    public AudioSource chiotSFX;
+    public AudioSource soapSFX;
+    public AudioSource clakSFX;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if((turretShootController.currentAmmoPrefab.gameObject.tag == "Clak"))
+        {
+            isClak = true;
+            isSoap = false;
+            isChiot = false;
+        }
+
+        if ((turretShootController.currentAmmoPrefab.gameObject.tag == "Chiot"))
+        {
+            isChiot = true;
+            isSoap = false;
+            isClak = false;
+        }
+
+        if ((turretShootController.currentAmmoPrefab.gameObject.tag == "Soap"))
+        {
+            isSoap = true;
+            isClak = false;
+            isChiot = false;
+        }
+
+
+        if (isClak)
+        {
+            clak.SetActive(true);
+        }
+        else
+        {
+            clak.SetActive(false);
+        }
+
+        if (isChiot) 
+        { 
+            chiot.SetActive(true);
+        }
+        else { chiot.SetActive(false); }
+
+
+        if (isSoap) 
+        {
+            soap.SetActive(true);
+        }
+        else
+        {
+            soap.SetActive(false);
+        }
+    }
+}
