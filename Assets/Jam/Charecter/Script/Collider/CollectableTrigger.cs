@@ -7,6 +7,10 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
     [field: SerializeField]
     public Character ownerCharacter;
 
+    public void OnTakeCollectable()
+    {
+
+    }
     public void Damage(float amount)
     {
        ownerCharacter.healthController.Dammage(amount);
@@ -18,7 +22,7 @@ public class CollectableTrigger : MonoBehaviour,IDamageable
         if (collectable != null)
         {
             collectable.Collect(ownerCharacter);
-
+            OnTakeCollectable();
         }
     }
 }
