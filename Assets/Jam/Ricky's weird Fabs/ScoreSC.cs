@@ -8,7 +8,9 @@ public class ScoreSC : MonoBehaviour
     public int score;
     public int wave;
     public int dmgCount;
-    public int enemyCount;
+
+    public SpawnManager spawnManager;
+
 
     public TextMeshProUGUI textScore;
     // Start is called before the first frame update
@@ -20,7 +22,10 @@ public class ScoreSC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = dmgCount + (wave * enemyCount);
+
+        wave = spawnManager.currentWave;
+
+        score = dmgCount * wave;
 
         textScore.text = score.ToString();
     }
