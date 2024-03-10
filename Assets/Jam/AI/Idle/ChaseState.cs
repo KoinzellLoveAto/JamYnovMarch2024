@@ -9,7 +9,9 @@ public class ChaseState : AMonoState
    public  EnemyKamikaz owner;
 
     public ExplodeTest explodeState;
+    public bool stop = false;
 
+    int counter;
     public override void OnEnter()
     {
         base.OnEnter();
@@ -17,6 +19,7 @@ public class ChaseState : AMonoState
 
     public override void UpdateState()
     {
+        if (stop) return;
         base.UpdateState();
         if (owner.Target != null)
         {
@@ -26,7 +29,11 @@ public class ChaseState : AMonoState
 
         if (Vector3.Distance(owner.transform.position, owner.Target.position) <= owner.DistanceBeforeRush)
         {
+            counter++;
+            print(counter);
+            stop = true;
             RequestChangeState(explodeState);
+            return;
         }
 
     }
