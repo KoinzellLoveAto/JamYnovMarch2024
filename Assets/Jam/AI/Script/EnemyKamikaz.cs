@@ -3,11 +3,13 @@ using RakaEngine.Statemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class EnemyKamikaz : AEnemy
 {
+    public Animator animator;
 
     private enum kamikazState
     {
@@ -48,6 +50,7 @@ public class EnemyKamikaz : AEnemy
         if (chase == false)
         {
             chase = true;
+            animator.SetTrigger("Move");
             state = kamikazState.chase;
         }
     }
@@ -87,6 +90,7 @@ public class EnemyKamikaz : AEnemy
     }
     public void Explode()
     {
+        animator.SetTrigger("isAttacking");
         navMeshAgent.isStopped = true;
         rb.isKinematic = false;
         Vector3 directionToPlayer = (Target.position - transform.position).normalized;

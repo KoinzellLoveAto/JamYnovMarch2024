@@ -301,6 +301,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &4560593593156907531
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540193557959012629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4648ad94e533a134f9afa2b68349ece5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &4858343950549482766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +337,7 @@ MonoBehaviour:
   statemachine: {fileID: 0}
   <healthController>k__BackingField: {fileID: 7380701194675375054}
   <Target>k__BackingField: {fileID: 0}
+  animator: {fileID: 4560593593156907531}
   DistanceBeforeRush: 5
   RushSpeed: 20
   dammage: 5
