@@ -4464,6 +4464,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 86.61, z: 0}
+--- !u!114 &1986571207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7644063167983040181, guid: 79c31324834361d439fb6b176728c025, type: 3}
+  m_PrefabInstance: {fileID: 4842667767052480597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd445b6611d5cfe4baac4cbb8b2e7dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1994306801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,6 +4981,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1825283055}
+    - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
+      propertyPath: spawnState
+      value: 
+      objectReference: {fileID: 1986571207}
     - target: {fileID: 4842667767540903117, guid: 79c31324834361d439fb6b176728c025, type: 3}
       propertyPath: spawnManager
       value: 

@@ -2,6 +2,7 @@ using RakaExtension.ListExtension;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
@@ -45,12 +46,11 @@ public class SpawnManager : MonoBehaviour
 
     public void HandlerDeathEnemy(AEnemy enemy)
     {
-        numEnemyLeft--;
         currentEnemiesInMap.Remove(enemy);
         enemy.OnDeathEnemy -= HandlerDeathEnemy;
         Destroy(enemy.gameObject);
 
-        if (numEnemyLeft <= 0)
+        if (currentEnemiesInMap.Count <= 0)
         {
             OnWaveClear?.Invoke();
 
@@ -65,7 +65,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnEntiereWave()
     {
-        
+        character.transform.SetLocalPositionAndRotation(PlayerSpawn.position,PlayerSpawn.rotation);
         for (int i = 0; i < EnemyToSpawn; i++)
         {
             SpawnRndEnemy(Spawner.PickRandom().GetRndPosition());
@@ -84,7 +84,6 @@ public class SpawnManager : MonoBehaviour
     public void SpawnNextWave()
     {
         EnemyToSpawn = EnemyToSpawn + currentWave * 5;
-        numEnemyLeft = EnemyToSpawn;
         SpawnEntiereWave();
     }
 }

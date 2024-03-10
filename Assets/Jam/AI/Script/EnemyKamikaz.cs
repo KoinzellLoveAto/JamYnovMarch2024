@@ -3,11 +3,8 @@ using RakaEngine.Statemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class EnemyKamikaz : AEnemy
 {
