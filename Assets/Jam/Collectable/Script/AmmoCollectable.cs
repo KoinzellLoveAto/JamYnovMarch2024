@@ -23,10 +23,7 @@ public class AmmoCollectable : MonoBehaviour, ICollectable
         }
     }
 
-    public void Update()
-    {
-        transform.LookAt(_ammoPrefab._rb.velocity.normalized);
-    }
+
     private IEnumerator DelayedDestroy()
     {
         yield return new WaitForSeconds(1.5f);
