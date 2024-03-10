@@ -9,6 +9,7 @@ using RakaEngine.Controllers.Health;
 public class CombatState : AGameState
 {
     public  SpawnManager spawnManager;
+    public SpawnState spawnState;
     public Character player;
     public override void OnEnter()
     {
@@ -19,6 +20,12 @@ public class CombatState : AGameState
 
     public void HandlerDeathPlayer(HealthController hc)
     {
+        player.healthController.EventSystem_onDeath -= HandlerDeathPlayer;
         RequestChangeState(m_nextState);
+    }
+    public void HandleWaveWiped()
+    {
+        player.healthController.EventSystem_onDeath -= HandlerDeathPlayer;
+        RequestDelayedChangeState(spawnState,1);
     }
 }
