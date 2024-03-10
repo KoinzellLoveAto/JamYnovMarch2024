@@ -41,7 +41,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7266019363079555384}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -290,7 +290,7 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 0}
   DistanceBeforeRush: 5
   RushSpeed: 20
-  dammage: 10
+  dammage: 999
   strForcePush: 20
   timeRush: 0.5
   vxDeath: {fileID: 83092536857408305}
