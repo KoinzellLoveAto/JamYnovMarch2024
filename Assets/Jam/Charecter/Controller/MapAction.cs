@@ -251,6 +251,65 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""ed45779d-a886-429f-a648-fd859a9c2800"",
+            ""actions"": [
+                {
+                    ""name"": ""Leave"",
+                    ""type"": ""Button"",
+                    ""id"": ""0085fc5c-c222-4f13-a0b7-397a2b97368d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""de5f7ee3-f22e-4c52-8c14-b3fc0194d00c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""634deb25-5fc6-42d9-83cf-7ebaf0be1e95"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81e00197-536f-45b5-9c66-2a2fb6c87e8f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Leave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b24b433b-7629-497a-97ac-a6bcb5c54bdd"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -262,6 +321,10 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
         m_Character_LookInput = m_Character.FindAction("LookInput", throwIfNotFound: true);
         m_Character_Rotate = m_Character.FindAction("Rotate", throwIfNotFound: true);
         m_Character_Boost = m_Character.FindAction("Boost", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Leave = m_Menu.FindAction("Leave", throwIfNotFound: true);
+        m_Menu_Restart = m_Menu.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -382,6 +445,47 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
         }
     }
     public CharacterActions @Character => new CharacterActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Leave;
+    private readonly InputAction m_Menu_Restart;
+    public struct MenuActions
+    {
+        private @MapAction m_Wrapper;
+        public MenuActions(@MapAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Leave => m_Wrapper.m_Menu_Leave;
+        public InputAction @Restart => m_Wrapper.m_Menu_Restart;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Leave.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeave;
+                @Leave.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeave;
+                @Leave.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnLeave;
+                @Restart.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnRestart;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Leave.started += instance.OnLeave;
+                @Leave.performed += instance.OnLeave;
+                @Leave.canceled += instance.OnLeave;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface ICharacterActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -389,5 +493,10 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
         void OnLookInput(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnLeave(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

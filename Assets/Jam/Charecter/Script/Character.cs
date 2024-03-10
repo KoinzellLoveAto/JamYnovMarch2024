@@ -33,7 +33,15 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        healthController.Initialize();
+        healthController.InitStat(100);
+        healthController.EventSystem_onDeath += HandleDeath;
+    }
+
+    public void HandleDeath(HealthController healthController)
+    {
+        healthController.EventSystem_onDeath -= HandleDeath;
+
+
     }
 
     private void Update()

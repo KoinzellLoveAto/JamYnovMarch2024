@@ -87,7 +87,6 @@ public class EnemyKamikaz : AEnemy
     }
     public void Explode()
     {
-        explodeTrigger.onDammageableHit += OnPlayerTouch;
         navMeshAgent.isStopped = true;
         rb.isKinematic = false;
         Vector3 directionToPlayer = (Target.position - transform.position).normalized;
@@ -102,8 +101,11 @@ public class EnemyKamikaz : AEnemy
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
         DeathFX();
+        explodeTrigger.onDammageableHit += OnPlayerTouch;
+
 
         yield return new WaitForSeconds(0.75f);
+        explodeTrigger.onDammageableHit -= OnPlayerTouch;
         healthController.Dammage(9999);
 
     }
@@ -113,7 +115,6 @@ public class EnemyKamikaz : AEnemy
 
         StopAllCoroutines();
         StartCoroutine(DelayKillSelf());
-        explodeTrigger.onDammageableHit -= OnPlayerTouch;
         character.Damage(dammage);
         healthController.Dammage(9999);
 

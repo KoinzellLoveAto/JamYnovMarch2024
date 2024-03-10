@@ -1,3 +1,4 @@
+using RakaEngine.Controllers.Health;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,16 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+        linkedCharacter.healthController.EventSystem_onDeath += HandleDeathPlayer;
         mapActionPlayer = new MapAction();
-        mapActionPlayer.Enable();
+        mapActionPlayer.Character.Enable();
+    }
+
+
+    public void HandleDeathPlayer(HealthController healthCOntroller)
+    {
+        mapActionPlayer.Character.Disable();
+
     }
 
     public void Start()
