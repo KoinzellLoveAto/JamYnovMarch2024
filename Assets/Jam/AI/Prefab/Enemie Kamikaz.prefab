@@ -315,7 +315,7 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 0}
   DistanceBeforeRush: 5
   RushSpeed: 20
-  dammage: 1
+  dammage: 50
   strForcePush: 20
   timeRush: 0.5
   vxDeath: {fileID: 83092536857408305}

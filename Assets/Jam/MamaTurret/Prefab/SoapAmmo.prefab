@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3990310476400584055}
   m_Layer: 3
   m_Name: SoapAmmo
-  m_TagString: Untagged
+  m_TagString: Soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
