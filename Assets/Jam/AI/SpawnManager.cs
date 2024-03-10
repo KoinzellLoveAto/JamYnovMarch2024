@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     public Transform PlayerSpawn;
 
     public int currentWave=0;
-    private int EnemyToSpawn = 10;
+    private int EnemyToSpawn = 40;
     private int numEnemyLeft = 0;
 
     public Action OnWaveSpawn;

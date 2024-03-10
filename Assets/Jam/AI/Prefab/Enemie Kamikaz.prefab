@@ -340,7 +340,7 @@ MonoBehaviour:
   animator: {fileID: 4560593593156907531}
   DistanceBeforeRush: 5
   RushSpeed: 20
-  dammage: 5
+  dammage: 12
   strForcePush: 20
   timeRush: 0.5
   vxDeath: {fileID: 83092536857408305}

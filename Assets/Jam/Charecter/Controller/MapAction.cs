@@ -290,7 +290,7 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""81e00197-536f-45b5-9c66-2a2fb6c87e8f"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -302,6 +302,17 @@ public partial class @MapAction : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""b24b433b-7629-497a-97ac-a6bcb5c54bdd"",
                     ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b9472e6-9f56-4af5-a239-213af0859bd8"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

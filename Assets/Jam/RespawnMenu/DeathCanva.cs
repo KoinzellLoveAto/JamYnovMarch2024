@@ -28,7 +28,7 @@ public class DeathCanva : MonoBehaviour
         mapAction.Menu.Restart.performed -= HandleRetry;
         mapAction.Menu.Leave.performed -= HandleExit;
 
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("FinalScene");
     }
 
     public void HandleExit(InputAction.CallbackContext a_ctx)
