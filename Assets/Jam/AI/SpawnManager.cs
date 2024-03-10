@@ -65,7 +65,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnEntiereWave()
     {
-        character.transform.SetLocalPositionAndRotation(PlayerSpawn.position,PlayerSpawn.rotation);
+        //character.transform.SetLocalPositionAndRotation(PlayerSpawn.position,PlayerSpawn.rotation);
         for (int i = 0; i < EnemyToSpawn; i++)
         {
             SpawnRndEnemy(Spawner.PickRandom().GetRndPosition());
