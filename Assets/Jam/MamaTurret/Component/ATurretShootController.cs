@@ -38,7 +38,9 @@ public abstract class ATurretShootController : MonoBehaviour
     {
 
         dataShootController = turretSetting;
-        StopCoroutine(_shootRoutine);
+
+        if (_shootRoutine != null)
+            StopCoroutine(_shootRoutine);
 
         _canShoot = true;
         _shootRoutine = StartCoroutine(ShootRoutine());
