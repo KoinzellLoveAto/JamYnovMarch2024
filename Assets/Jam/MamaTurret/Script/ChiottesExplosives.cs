@@ -12,6 +12,9 @@ public class ChiottesExplosives : AAmmo
 
     [Space(10)]
 
+    public GameObject meshObj;
+
+
     [Header("Explosion Settings")]
     [Space(5)]
     public float exploForce;
@@ -22,16 +25,24 @@ public class ChiottesExplosives : AAmmo
     public float exploRadius;
     [Space(5)]
     public GameObject explosionVFX;
-
+    private bool freeze = false;
     private void Awake()
     {
         exploTimer = Random.Range(minTimer, maxTimer);
         exploRadius = Random.Range(minRad, maxRad);
     }
 
+    public void Update()
+    {
+        if (!freeze)
+            transform.forward = _rb.velocity.normalized;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        transform.parent = collision.transform;
+        freeze = true;
+
+        transform.SetParent(collision.transform);
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
         StartCoroutine(TimerExplosion());
@@ -51,9 +62,8 @@ public class ChiottesExplosives : AAmmo
             //Damage Enemies;
         }
 
-        transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-        transform.GetChild(0).GetChild(1).GetComponent<MeshRenderer>().enabled = false;
-        explosionVFX.transform.localScale *= exploForce/2;
+        meshObj.SetActive(false);
+        explosionVFX.transform.localScale *= exploForce / 2;
         explosionVFX.SetActive(true);
     }
 
