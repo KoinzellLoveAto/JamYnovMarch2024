@@ -17,6 +17,9 @@ public class AmmoImageManager : MonoBehaviour
     public AudioSource chiotSFX;
     public AudioSource soapSFX;
     public AudioSource clakSFX;
+
+
+    bool hasPlayed;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class AmmoImageManager : MonoBehaviour
     {
         if((turretShootController.currentAmmoPrefab.gameObject.tag == "Clak"))
         {
+            //clakSFX.Play();
             isClak = true;
             isSoap = false;
             isChiot = false;
@@ -35,6 +39,7 @@ public class AmmoImageManager : MonoBehaviour
 
         if ((turretShootController.currentAmmoPrefab.gameObject.tag == "Chiot"))
         {
+            //chiotSFX.Play();
             isChiot = true;
             isSoap = false;
             isClak = false;
@@ -42,6 +47,7 @@ public class AmmoImageManager : MonoBehaviour
 
         if ((turretShootController.currentAmmoPrefab.gameObject.tag == "Soap"))
         {
+            //soapSFX.Play();
             isSoap = true;
             isClak = false;
             isChiot = false;
