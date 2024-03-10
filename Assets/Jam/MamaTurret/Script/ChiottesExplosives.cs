@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ChiottesExplosives : AAmmo
@@ -13,7 +14,7 @@ public class ChiottesExplosives : AAmmo
     [Space(10)]
 
     public GameObject meshObj;
-
+    private int scalevfx = 5;
 
     [Header("Explosion Settings")]
     [Space(5)]
@@ -26,6 +27,7 @@ public class ChiottesExplosives : AAmmo
     [Space(5)]
     public GameObject explosionVFX;
     private bool freeze = false;
+    Transform attach;
     private void Awake()
     {
         exploTimer = Random.Range(minTimer, maxTimer);
@@ -36,13 +38,17 @@ public class ChiottesExplosives : AAmmo
     {
         if (!freeze)
             transform.forward = _rb.velocity.normalized;
+        else
+        {
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        freeze = true;
 
-        transform.SetParent(collision.transform);
+        freeze = true;
+  
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
         StartCoroutine(TimerExplosion());
@@ -60,10 +66,15 @@ public class ChiottesExplosives : AAmmo
         foreach (var hitCollider in hitColliders)
         {
             //Damage Enemies;
+            IDamageable damamge = hitCollider.gameObject.GetComponent<IDamageable>() ;
+            if (damamge != null && hitCollider.gameObject.GetComponent<CollectableTrigger>() == null)
+            {
+                damamge.Damage(dataAmmo.Dammage);
+            }
         }
 
         meshObj.SetActive(false);
-        explosionVFX.transform.localScale *= exploForce / 2;
+       // explosionVFX.transform.localScale *= exploForce / 2;
         explosionVFX.SetActive(true);
     }
 
