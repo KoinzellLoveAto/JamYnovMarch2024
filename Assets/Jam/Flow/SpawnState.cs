@@ -11,6 +11,6 @@ public class SpawnState : AGameState
     {
         base.OnEnter();
         spawnManager.SpawnEntiereWave();
-        RequestDelayedChangeState(m_nextState, 2);
+        RequestChangeState(m_nextState);
     }
 }
